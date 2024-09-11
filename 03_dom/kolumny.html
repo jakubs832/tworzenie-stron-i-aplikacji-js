@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="kolumny.js" defer></script>
+    <style>
+        header {
+            background-color: #ffdfd3;
+        }
+
+        .side_column {
+            background-color: #d291bc;
+            flex: 1;
+        }
+
+        .main_column {
+            background-color: #fec8d8;
+            flex: 2;
+        }
+
+        footer {
+            background-color: #957dad;
+            flex: 1;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header, section, footer {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nagłówek strony</h1>
+    </header>
+    <main class="row">
+        <section class="side_column">
+            <h1>Kolumna I</h1>
+        </section>
+        <section class="main_column">
+            <h1>Kolumna II</h1>
+        </section>
+        <section class="side_column">
+            <h1>Kolumna III</h1>
+        </section>
+    </main>
+    <footer>
+        <h1>Stopka</h1>
+    </footer>
+</body>
+</html>
