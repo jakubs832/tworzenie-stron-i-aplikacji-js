@@ -19,14 +19,14 @@ h1_section.textContent = "Specjalność szefa:";
 
 // 5
 let p = document.createElement("p");
-p.textContent = "Kebab na frytkach _-_";
+p.textContent = "Kebab na frytkach -_-";
 document.querySelector(".main_column").append(p);
 
 // 6
 let div = document.createElement("div");
 div.style.backgroundColor = "pink";
 let p2 = document.createElement("p");
-p2.innerHTML = "&copy;";
+p2.textContent = "&copy;";
 p2.style.textAlign = "center";
 div.append(p2);
 document.querySelector("footer").append(div);
