@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>=</title>
+</head>
+
+<body>
+    <div>
+        <textarea onfocus="this.style.backgroundColor = 'yellow';"></textarea>
+    </div>
+    <p>
+        <input type="text" onblur="this.value = this.value.toUpperCase();">
+    </p>
+    <p>
+        <select onchange="this.style.color = this.value;">
+            <option>black</option>
+            <option>brown</option>
+            <option>blue</option>
+            <option>blueviolet</option>
+            <option>burlywood</option>
+            <option>bisque</option>
+        </select>
+    </p>
+    <p onclick="this.style.fontSize = 'xx-large';" ondblclick="this.style.fontSize = 'medium';">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, cumque.
+    </p>
+    <div>
+        <img src="obrazek.png" oncontextmenu="alert(this.src);">
+    </div>
+    <div>
+        <input type="text" onkeyup="document.querySelector('#output').textContent = this.value;">
+        <p id="output"></p>
+    </div>
+    <h1 style="color: green;" onmouseover="this.style.textShadow = '2px 2px 5px green';" onmouseout="this.style.textShadow = '';">Lorem ipsum dolor sit amet.</h1>
+</body>
+
+</html>
