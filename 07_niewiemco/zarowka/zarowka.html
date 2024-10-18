@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="zarowka.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        tr:nth-child(2n) {
+            background-color: indianred;
+        }
+        tr,td {
+            border: none;
+        }
+        td {
+            padding: 10px;
+        }
+        img {
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">
+                <img src="off.png" id="zarowka">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="btnon">Włącz</button>
+            </td>
+            <td>
+                <button id="btnoff">Wyłącz</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" name="radio" id="radioon">
+                <label for="radioon">Włączona</label>
+            </td>
+            <td>
+                <input type="radio" name="radio" id="radiooff">
+                <label for="radiooff">Wyłączona</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" id="toggle">
+                <label for="toggle">Włączona</label>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
