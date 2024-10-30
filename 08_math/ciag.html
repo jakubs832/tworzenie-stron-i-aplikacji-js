@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: lightyellow;
+            color: lightcoral;
+            font-family: "Verdana";
+            font-size: 16px;
+        }
+
+        input,
+        button {
+            border: 2px solid coral;
+            background-color: lightgoldenrodyellow;
+            color: brown;
+        }
+
+        input[type="number"] {
+            width: 100px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        fieldset {
+            border: 2px solid coral;
+        }
+    </style>
+    <script src="ciag.js" defer></script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Suma n początkowych wyrazów ciągu arytmetycznego</legend>
+
+        <p>
+            <label for="first">Podaj pierwszy wyraz ciągu: a<sub>1</sub> = </label>
+            <input type="number" step="0.1" id="first">
+            (a<sub>1</sub> ∈ ℝ)
+        </p>
+
+        <p>
+            <label for="second">Podaj drugi wyraz ciągu: a<sub>2</sub> = </label>
+            <input type="number" step="0.1" id="second">
+            (a<sub>2</sub> ∈ ℝ)
+        </p>
+
+        <p>
+            <label for="ile">Dla ilu wyrazów obliczyć sumę: n = </label>
+            <input type="number" step="1" min="1" id="ile">
+            (a<sub>1</sub> ∈ ℕ; a ≥ 1)
+        </p>
+
+        <button id="calculate">Dla danego n wypisz max. 3 początkowe i 3 końcowe wyrazy ciągu oraz oblicz jego
+            sumę</button>
+
+        <div>
+            <ul id="output">
+
+            </ul>
+        </div>
+
+        <p id="output2"></p>
+    </fieldset>
+</body>
+
+</html>
