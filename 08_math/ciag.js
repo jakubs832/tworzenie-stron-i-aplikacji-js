@@ -18,7 +18,7 @@ document.querySelector("#calculate").addEventListener("click", () => {
     output.innerHTML = "";
     output2.textContent = "";
 
-    if (!ile.value || ile.value < 1) {
+    if (ile.value < 1) {
         output2.textContent = "Ilość wyrazów ciągu musi być liczbą naturalną większą lub równą 1.";
         return;
     }
@@ -37,12 +37,22 @@ document.querySelector("#calculate").addEventListener("click", () => {
 
     const diff = secondVal - firstVal;
 
+    let ileplus = 0;
+    switch(ile.value) {
+        case "5":
+            ileplus = 1;
+            break;
+        case "4":
+            ileplus = 2;
+            break;
+    }
+
     if (ile.value >= 1) addOutput("a<sub>1</sub> = " + firstVal);
     if (ile.value >= 2) addOutput("a<sub>2</sub> = " + (firstVal + diff));
     if (ile.value >= 3) addOutput("a<sub>3</sub> = " + (firstVal + 2 * diff));
     if (ile.value > 6) addOutput("...");
-    if (ile.value >= 4) addOutput("a<sub>" + (ile.value - (ile.value - 4)) + "</sub> = " + (firstVal + (ile.value - (ile.value - 4)) * diff));
-    if (ile.value >= 5) addOutput("a<sub>" + (ile.value - (ile.value - 5)) + "</sub> = " + (firstVal + (ile.value - (ile.value - 5)) * diff));
+    if (ile.value >= 4) addOutput("a<sub>" + (ile.value - 2 + ileplus) + "</sub> = " + (firstVal + (ile.value - 2 + ileplus) * diff));
+    if (ile.value >= 5) addOutput("a<sub>" + (ile.value - 1 + ileplus) + "</sub> = " + (firstVal + (ile.value - 1 + ileplus) * diff));
     if (ile.value >= 6) addOutput("a<sub>" + ile.value + "</sub> = " + (firstVal + ile.value * diff));
 
     const sum = (firstVal + ile.value * diff) / 2 * ile.value;
