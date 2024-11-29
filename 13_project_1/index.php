@@ -11,7 +11,7 @@
 
 <body>
     <?php
-    $error = false;
+    $success = true;
     try {
         $db = new mysqli(
             "127.0.0.1",
@@ -20,16 +20,44 @@
             "paszport1"
         );
     } catch (Exception $e) {
-        $error = true;
-    ?>
-        <p class="error">Błąd połączenia z bazą danych</p>
-    <?php
+        $success = false;
+        ?>
+        <p class="error">Błąd połączenia z bazą danych: <?= $e ?></p>
+        <?php
     }
 
-    if(!$error) {
-    ?>
+    if ($success) {
+        ?>
         <p class="success">Połączono z bazą danych paszport1.</p>
-    <?php
+        <?php
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $pesel = $_POST["pesel"];
+        $firstname = $_POST["firstname"];
+        $lastname = $_POST["lastname"];
+        $color = $_POST["color"];
+
+        $success = true;
+        try {
+            $db->query("INSERT INTO paszporty VALUES ('$pesel', '$firstname', '$lastname', '$color');");
+        } catch (Exception $e) {
+            $success = false;
+            ?>
+            <p class="error">Błąd wstawiania danych: <?= $e ?></p>
+            <?php
+        }
+
+        if ($success) {
+            ?>
+            <ul>
+                <li><?= $pesel ?></li>
+                <li><?= $firstname ?></li>
+                <li><?= $lastname ?></li>
+                <li><?= $color ?></li>
+            </ul>
+            <?php
+        }
     }
     ?>
 
@@ -65,15 +93,15 @@
                     <fieldset>
                         <legend>Kolor oczu</legend>
 
-                        <input type="radio" name="color" id="color_blue">
+                        <input type="radio" name="color" id="color_blue" value="0">
                         <label for="color_blue">niebieskie</label>
                         <br>
 
-                        <input type="radio" name="color" id="color_green">
+                        <input type="radio" name="color" id="color_green" value="1">
                         <label for="color_green">zielone</label>
                         <br>
 
-                        <input type="radio" name="color" id="color_beer">
+                        <input type="radio" name="color" id="color_beer" value="2">
                         <label for="color_beer">piwne</label>
                     </fieldset>
                 </td>
